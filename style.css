@@ -1,0 +1,17 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap');
+
+:root {
+   --primary-h: linear-gradient(to right, hsl(236, 72%, 79%), hsl(237, 63%, 64%));
+   --primary-v: linear-gradient(to bottom, hsl(236, 72%, 79%), hsl(237, 63%, 64%));
+   --dark1: hsl(232, 13%, 33%);
+   --dark2: hsl(233, 13%, 49%);
+   --light1: hsl(234, 14%, 74%);
+   --light2: hsl(240, 78%, 98%);
+}
+
+body {
+   font-family: 'Montserrat', sans-serif;
+   font-weight: 700;
+   font-size: 15px;
+}
+
