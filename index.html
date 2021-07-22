@@ -9,6 +9,7 @@
   <title>[Pricing] - Frontend Mentor</title>
 
   <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  <link rel="stylesheet" href="style.css">
   <style>
     .attribution { font-size: 11px; text-align: center; }
     .attribution a { color: hsl(228, 45%, 44%); }
@@ -21,12 +22,14 @@
         Our Pricing
       </h1>
       <div class="selector-container">
-        <p class="selector-label">Annually</p>
-        <div class="selector-outer">
-          <div class="selector-inner">
-          </div>
-        </div>
-        <p class="selector-label">Monthly</p>
+        <p class="plan-duration">Annually</p>
+
+        <label for="plan-selector" class="selector">
+          <input class="selector__input" type="checkbox" name="" id="plan-selector">
+          <div class="selector__object"></div>
+        </label>
+
+        <p class="plan-duration">Monthly</p>
       </div>
     </div>
 
