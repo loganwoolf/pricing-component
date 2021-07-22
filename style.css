@@ -7,15 +7,17 @@
    --dark2: hsl(233, 13%, 49%);
    --light1: hsl(234, 14%, 74%);
    --light2: hsl(240, 78%, 98%);
+   --darkblue: hsl(237, 63%, 64%);
 }
 
 h1 {
+   font-size: 2rem;
    color: var(--dark2);
    margin: 0;
 }
 h2 {
    color: var(--dark2);
-   font-size: 1.1rem;
+   font-size: 1.2rem;
    margin: 0;
 }
 h3 {
@@ -36,6 +38,7 @@ button {
    font-family: 'Montserrat', sans-serif;
    letter-spacing: 0.08rem;
    font-size: 0.8rem;
+   cursor: pointer;
 }
 
 body {
@@ -44,6 +47,9 @@ body {
    font-size: 15px;
    margin: 0;
    background: var(--light2) url(./images/bg-top.svg) top right no-repeat;
+}
+body * {
+   user-select: none;
 }
 main {
    display: flex;
@@ -56,7 +62,7 @@ main {
 .pricing {
    display: flex;
    flex-direction: column;
-   gap: 2rem;
+   gap: 2.5rem;
    margin: 3.5rem 0 4.5rem;
 }
 .plan-duration {
@@ -67,7 +73,7 @@ main {
    flex-direction: row;
    justify-content: center;
    align-items: center;
-   gap: 2rem;
+   gap: 1.5rem;
 }
 .price-card-container {
    display: flex;
@@ -82,12 +88,14 @@ main {
    flex-direction: column;
    gap: 1.5rem;
 }
-
+.price-card:last-child {
+   box-shadow: 0 2rem 2rem #8883;
+}
 .price-month { /* find a way to do with js */
    display: none;
 }
 .plan-benefit-container {
-   --divider: 1.5px solid #eee;
+   --divider: 1.5px solid #ccc6;
    display: flex;
    flex-direction: column;
 }
@@ -106,3 +114,14 @@ main {
    border-radius: 0.5rem;
    color: var(--light2);
 }
+.featured {
+   background: var(--primary-v);
+}
+.featured h2, .featured h3, .featured p {
+   color: var(--light2);
+}
+.featured button {
+   background: var(--light2);
+   color: var(--darkblue);
+}
+
