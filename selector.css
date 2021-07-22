@@ -1,0 +1,36 @@
+.selector {
+   --height: 2rem;
+   --width: calc(var(--height) * 1.8);
+   --border-radius: calc(var(--height) / 2);
+
+   display: inline-block;
+   cursor: pointer;
+}
+.selector__input {
+   display: none;
+}
+.selector__object {
+   position: relative;
+   width: var(--width);
+   height: var(--height);
+   border-radius: var(--border-radius);
+   background: var(--primary-h);
+   transition: opacity 300ms;
+}
+.selector__object:hover {
+   opacity: 80%;
+}
+.selector__object::after {
+   content: "";
+   position: absolute;
+   top: calc(var(--height) * 0.15);
+   left: calc(var(--height) * 0.15);
+   height: calc(var(--height) * 0.7);
+   width: calc(var(--height) * 0.7);
+   background: white;
+   border-radius: var(--border-radius);
+   transition: transform 400ms;
+}
+.selector__input:checked ~ .selector__object::after {
+   transform: translateX(calc(var(--width) * 0.44));
+}
