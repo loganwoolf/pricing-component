@@ -11,12 +11,8 @@ This is a solution to the [Pricing component with toggle challenge on Frontend M
 - [My process](#my-process)
   - [Built with](#built-with)
   - [What I learned](#what-i-learned)
-  - [Continued development](#continued-development)
   - [Useful resources](#useful-resources)
 - [Author](#author)
-- [Acknowledgments](#acknowledgments)
-
-**Note: Delete this note and update the table of contents based on what sections you keep.**
 
 ## Overview
 
@@ -30,20 +26,13 @@ Users should be able to:
 
 ### Screenshot
 
-![](./screenshot.jpg)
-
-Add a screenshot of your solution. The easiest way to do this is to use Firefox to view your project, right-click the page and select "Take a Screenshot". You can choose either a full-height screenshot or a cropped one based on how long the page is. If it's very long, it might be best to crop it.
-
-Alternatively, you can use a tool like [FireShot](https://getfireshot.com/) to take the screenshot. FireShot has a free option, so you don't need to purchase it. 
-
-Then crop/optimize/edit your image however you like, add it to your project, and update the file path in the image above.
-
-**Note: Delete this note and the paragraphs above when you add your screenshot. If you prefer not to add a screenshot, feel free to remove this entire section.**
+![](./screenshots/desktop.png)
+![](./screenshots/mobile.png)
 
 ### Links
 
 - Solution URL: [Add solution URL here](https://your-solution-url.com)
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+- Live Site URL: [https://loganwoolf.github.io/pricing-component/](https://loganwoolf.github.io/pricing-component/)
 
 ## My process
 
@@ -54,60 +43,90 @@ Then crop/optimize/edit your image however you like, add it to your project, and
 - Flexbox
 - CSS Grid
 - Mobile-first workflow
-- [React](https://reactjs.org/) - JS library
-- [Next.js](https://nextjs.org/) - React framework
-- [Styled Components](https://styled-components.com/) - For styles
-
-**Note: These are just examples. Delete this note and replace the list above with your own choices**
 
 ### What I learned
 
-Use this section to recap over some of your major learnings while working through this project. Writing these out and providing code samples of areas you want to highlight is a great way to reinforce your own knowledge.
-
-To see how you can add code snippets, see below:
-
-```html
-<h1>Some HTML code I'm proud of</h1>
-```
+- Cleaned up CSS massively by moving selector styles to a separate file and importing it.
 ```css
-.proud-of-this-css {
-  color: papayawhip;
-}
-```
-```js
-const proudOfThisFunc = () => {
-  console.log('🎉')
-}
+@import 'selector.css';
 ```
 
-If you want more help with writing markdown, we'd recommend checking out [The Markdown Guide](https://www.markdownguide.org/) to learn more.
+- As with colors, it is much easier to define your typography ahead of time than to adjust every single one throughout the project. I don't think there are any exceptions that came up after making this.
+```css
+h1 {
+   font-size: 2rem;
+   color: var(--dark2);
+   margin: 0;
+}
+h2 {
+   color: var(--dark2);
+   font-size: 1.2rem;
+   margin: 0;
+}
+h3 {
+   color: var(--dark1);
+   font-size: 4.5rem;
+   margin: 0;
+}
+h3::before {
+   content: "$";
+   font-size: 2.5rem;
+   vertical-align: 20%;
+}
+p {
+   color: var(--dark2);
+   margin: 0;
+}
+button {
+   font-family: 'Montserrat', sans-serif;
+   letter-spacing: 0.08rem;
+   font-size: 0.8rem;
+   cursor: pointer;
+}
+body {
+   font-family: 'Montserrat', sans-serif;
+   font-weight: 700;
+   font-size: 15px;
+}
+```
 
-**Note: Delete this note and the content within this section and replace with your own learnings.**
+- Used CSS custom property scoping top eliminate some repitition, example below on flex item dividers.
+```css
+.plan-benefit-container {
+   --divider: 1.5px solid #ccc6;
+}
+.plan-benefit {
+   border-bottom: var(--divider);
+}
+.plan-benefit:first-child {
+   border-top: var(--divider);
+}
+```
 
-### Continued development
-
-Use this section to outline areas that you want to continue focusing on in future projects. These could be concepts you're still not completely comfortable with or techniques you found useful that you want to refine and perfect.
-
-**Note: Delete this note and the content within this section and replace with your own plans for continued development.**
+- Had success in resizing a specific card type using CSS Grid Span. The featured card spans across the two small height grid rows at the top and bottom, and padding keeps the contents in line. This was a very quick fix.
+```css
+.price-card-container {
+      display: grid;
+      grid-template-columns: repeat(3, auto);
+      grid-auto-rows: 2rem auto 2rem;
+   }
+   .price-card {
+      grid-row: 2 / 3;
+   }
+   .featured {
+      grid-row: 1 / 4;
+      grid-column: 2 / 3;
+      padding: 4rem 2rem; 
+      /*Originally 2rem 2rem*/
+   }
+```
 
 ### Useful resources
 
-- [https://dev.to/dcodeyt/creating-a-css-only-toggle-switch-5cg3](https://dev.to/dcodeyt/creating-a-css-only-toggle-switch-5cg3) - This example of a checkbox switch was very helpful. I took a few of the ideas and was able to make the project switch in no time
-- [Example resource 2](https://www.example.com) - This is an amazing article which helped me finally understand XYZ. I'd recommend it to anyone still learning this concept.
-- [Example resource 2](https://www.example.com) - This is an amazing article which helped me finally understand XYZ. I'd recommend it to anyone still learning this concept.
-
-**Note: Delete this note and replace the list above with resources that helped you during the challenge. These could come in handy for anyone viewing your solution or for yourself when you look back on this project in the future.**
+- [https://dev.to/dcodeyt/creating-a-css-only-toggle-switch-5cg3](https://dev.to/dcodeyt/creating-a-css-only-toggle-switch-5cg3) - This example of a checkbox switch was very helpful. I took a few of the ideas and was able to make the project switch in no time.
 
 ## Author
 
-- Website - [Add your name here](https://www.your-site.com)
-- Frontend Mentor - [@yourusername](https://www.frontendmentor.io/profile/yourusername)
-- Twitter - [@yourusername](https://www.twitter.com/yourusername)
-
-**Note: Delete this note and add/remove/edit lines above based on what links you'd like to share.**
-
-## Acknowledgments
-
-This is where you can give a hat tip to anyone who helped you out on this project. Perhaps you worked in a team or got some inspiration from someone else's solution. This is the perfect place to give them some credit.
-
-**Note: Delete this note and edit this section's content as necessary. If you completed this challenge by yourself, feel free to delete this section entirely.**
+- Website - [https://loganwoolf.github.io](https://loganwoolf.github.io)
+- Frontend Mentor - [@loganwoolf](https://www.frontendmentor.io/profile/loganwoolf)
+- Twitter - [@logan__woolf](https://www.twitter.com/logan__woolf)
