@@ -111,11 +111,16 @@ main {
 }
 .learn-more {
    background: var(--primary-h);
-   border: none;
+   border: 1px solid var(--light2);
    padding: 0.9rem 0;
    margin-top: 0.5rem;
    border-radius: 0.5rem;
    color: var(--light2);
+}
+.learn-more:hover {
+   background: #0000;
+   color: var(--darkblue);
+   border: 1px solid var(--dark2);
 }
 .featured {
    background: var(--primary-v);
@@ -123,9 +128,14 @@ main {
 .featured h2, .featured h3, .featured p {
    color: var(--light2);
 }
-.featured button {
+.featured .learn-more {
    background: var(--light2);
    color: var(--darkblue);
+}
+.featured .learn-more:hover {
+   background: #0000;
+   color: var(--light2);
+   border: 1px solid var(--light2);
 }
 
 @media (min-width: 70rem) {
