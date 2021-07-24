@@ -144,6 +144,7 @@ main {
       background-position: top right, bottom left;
       background-size: auto 80%, auto 40%;
       background-repeat: no-repeat;
+      min-height: 100vh;
    }
    .price-card-container {
       display: grid;
