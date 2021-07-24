@@ -91,8 +91,11 @@ main {
 .price-card:last-child {
    box-shadow: 0 2rem 2rem #8883;
 }
-.price-month { /* find a way to do with js */
+.hidden {
    display: none;
+}
+.price-annual, .price-month {
+   width: 17.2rem;
 }
 .plan-benefit-container {
    --divider: 1.5px solid #ccc6;
