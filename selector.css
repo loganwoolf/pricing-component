@@ -15,7 +15,6 @@
    height: var(--height);
    border-radius: var(--border-radius);
    background: var(--primary-h);
-   transition: opacity 300ms;
 }
 .selector__object:hover {
    opacity: 80%;
@@ -32,5 +31,5 @@
    transition: transform 400ms;
 }
 .selector__input:checked ~ .selector__object::after {
-   transform: translateX(calc(var(--width) * 0.44));
+   transform: translateX(calc(var(--width) - (var(--height))));
 }
