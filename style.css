@@ -128,3 +128,28 @@ main {
    color: var(--darkblue);
 }
 
+@media (min-width: 70rem) {
+   body {
+      background-image: url(./images/bg-top.svg), url(./images/bg-bottom.svg);
+      background-position: top right, bottom left;
+      background-size: auto 80%, auto 40%;
+      background-repeat: no-repeat;
+   }
+   .price-card-container {
+      display: grid;
+      grid-template-columns: repeat(3, auto);
+      grid-auto-rows: 2rem auto 2rem;
+      gap: 0;
+   }
+   .price-card {
+      grid-row: 2 / 3;
+      box-shadow: 0 2rem 2rem #8886;
+   }
+   .featured {
+      grid-row: 1 / 4;
+      grid-column: 2 / 3;
+      padding: 4rem 2rem;
+      box-shadow: 0 2rem 2rem #8886;
+   }
+
+}
